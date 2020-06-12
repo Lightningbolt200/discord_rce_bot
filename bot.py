@@ -25,8 +25,8 @@ async def on_member_remove(member):
 async def cmd(ctx,*arg):
     print(arg)
     a = ' '.join(arg)
-    b=os.popen(a).read()
-    await ctx.send(b)
+    y=subprocess.Popen(x, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE, shell=True).communicate()
+    await ctx.send(y)
 
 
 client.run("discord_key")
